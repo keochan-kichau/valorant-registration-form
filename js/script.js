@@ -21,13 +21,16 @@ document
     statusEl.textContent = "Đang gửi...";
 
     try {
-      const res = await fetch("🔗DÁN_LINK_EXEC_Ở_ĐÂY", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-        },
-        body: params.toString(),
-      });
+      const res = await fetch(
+        "https://script.google.com/macros/s/AKfycbw-Gdr4igTM7X3XnXIIPKPODPdT7KlIxnq-hHbdc3eYZ8tzMKcpFwDGY5Lbg5GcCP7HZQ/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          },
+          body: params.toString(),
+        }
+      );
 
       const json = await res.json().catch(() => ({}));
 
