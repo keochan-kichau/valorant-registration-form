@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Đăng Ký Tuyển Thủ – Valorant BK</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <h1>Đăng ký tuyển thủ Valorant – BK Championship 2025</h1>
+    <form id="registration-form">
+      <fieldset>
+        <legend>Thông tin cá nhân</legend>
+        <label
+          >Họ & Tên:<br /><input type="text" name="fullname" required /></label
+        ><br />
+        <label
+          >Năm sinh:<br /><input
+            type="number"
+            name="birthyear"
+            required /></label
+        ><br />
+        <label
+          >Lớp / Ngành:<br /><input
+            type="text"
+            name="department"
+            required /></label
+        ><br />
+        <label
+          >MSSV:<br /><input type="text" name="student_id" required /></label
+        ><br />
+        <label
+          >Số điện thoại:<br /><input
+            type="text"
+            name="phone"
+            required /></label
+        ><br />
+        <label>Email:<br /><input type="email" name="email" required /></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Thông tin game</legend>
+        <label
+          >Riot ID + Tagline:<br /><input
+            type="text"
+            name="riot_id"
+            required /></label
+        ><br />
+        <label
+          >Rank hiện tại:<br />
+          <select name="rank" required>
+            <option value="">Chọn rank</option>
+            <option value="Iron">Iron</option>
+            <option value="Bronze">Bronze</option>
+            <option value="Silver">Silver</option>
+            <option value="Gold">Gold</option>
+            <option value="Platinum">Platinum</option>
+            <option value="Diamond">Diamond</option>
+            <option value="Immortal">Immortal</option>
+            <option value="Radiant">Radiant</option>
+          </select> </label
+        ><br />
+        <label
+          >Agent main (tối đa 3):<br /><input
+            type="text"
+            name="agent_main" /></label
+        ><br />
+        <label
+          >Giờ thi đấu thuận tiện:<br /><input
+            type="text"
+            name="preferred_time"
+        /></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Kinh nghiệm & cam kết</legend>
+        <label
+          >Giải đã tham gia (nếu có):<br /><textarea
+            name="past_experience"
+          ></textarea></label
+        ><br />
+        <label
+          >Điểm mạnh – điểm yếu:<br /><textarea
+            name="strengths"
+          ></textarea></label
+        ><br />
+        <label>
+          <input type="checkbox" name="commit_rules" required />
+          Tôi cam kết tuân thủ luật, không sử dụng cheat, đảm bảo thời gian thi
+          đấu.
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Liên hệ dự phòng</legend>
+        <label
+          >Discord tag:<br /><input
+            type="text"
+            name="discord_tag"
+            required /></label
+        ><br />
+        <label
+          >Nick phụ (nếu có):<br /><input type="text" name="alt_nick"
+        /></label>
+      </fieldset>
+
+      <button type="submit">Gửi đăng ký</button>
+    </form>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
