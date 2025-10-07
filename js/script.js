@@ -26,3 +26,19 @@ document
         alert("Lỗi mạng");
       });
   });
+const status = document.createElement("p");
+status.id = "status";
+status.style.color = "#00ff88";
+status.style.fontWeight = "bold";
+form.appendChild(status);
+
+// ... trong phần fetch ...
+status.textContent = "Đang gửi...";
+
+// Sau khi nhận kết quả:
+if (json.ok) {
+  status.textContent = "✅ Đăng ký thành công! BTC đã nhận thông tin.";
+  form.reset();
+} else {
+  status.textContent = "❌ Có lỗi, vui lòng thử lại sau.";
+}
