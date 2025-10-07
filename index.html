@@ -2,197 +2,83 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Đăng ký đội – Valorant Esports Cup 2025</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- CSS -->
+    <title>Đăng ký đội thi đấu – Valorant BK Esports Cup 2025</title>
     <link rel="stylesheet" href="css/style.css" />
-
-    <!-- Gợi ý: nếu dùng Formspree, bạn có thể thêm action + method ngay trên thẻ <form>
-       <form action="https://formspree.io/f/MAENDPOINT" method="POST" id="registration-form">
-       Còn nếu bạn dùng Google Apps Script/Discord Webhook thì để id & dùng js/script.js -->
   </head>
   <body>
-    <form id="registration-form" novalidate>
+    <div class="container">
       <h1>Đăng ký đội thi đấu – Valorant BK Esports Cup 2025</h1>
 
-      <!-- THÔNG TIN ĐỘI -->
-      <fieldset>
-        <legend>Thông tin đội thi đấu</legend>
+      <form id="registration-form">
+        <h2>Thông tin đội thi đấu</h2>
 
-        <label
-          >Tên đội:
-          <input
-            type="text"
-            name="team_name"
-            autocomplete="organization"
-            required
-          />
-        </label>
+        <label>Tên đội</label>
+        <input type="text" name="Tên_đội" required />
 
-        <label
-          >Tên đội trưởng:
-          <input type="text" name="captain_name" autocomplete="name" required />
-        </label>
+        <label>Tên đội trưởng</label>
+        <input type="text" name="Tên_đội_trưởng" required />
 
-        <label
-          >Số điện thoại đội trưởng:
-          <input
-            type="tel"
-            name="captain_phone"
-            inputmode="tel"
-            autocomplete="tel"
-            placeholder="0xxxxxxxxx"
-            required
-          />
-        </label>
+        <label>Số điện thoại đội trưởng</label>
+        <input type="tel" name="Số_điện_thoại_đội_trưởng" required />
 
-        <label
-          >Email đội trưởng:
-          <input
-            type="email"
-            name="captain_email"
-            autocomplete="email"
-            placeholder="you@example.com"
-            required
-          />
-        </label>
+        <label>Email đội trưởng</label>
+        <input type="email" name="Email_đội_trưởng" required />
 
-        <label
-          >Discord đội trưởng:
-          <input
-            type="text"
-            name="captain_discord"
-            placeholder="username#1234"
-            required
-          />
-        </label>
-      </fieldset>
+        <label>Discord đội trưởng</label>
+        <input type="text" name="Discord_đội_trưởng" required />
 
-      <!-- THÔNG TIN VẬN ĐỘNG VIÊN -->
-      <fieldset>
-        <legend>Thông tin vận động viên tham gia thi đấu</legend>
-        <p>
-          Vui lòng nhập thông tin của <strong>tất cả thành viên</strong> (bao
-          gồm dự bị). Mỗi dòng một người.
+        <h2>Thông tin vận động viên tham gia thi đấu</h2>
+        <p class="note">
+          Vui lòng nhập thông tin của tất cả thành viên (bao gồm dự bị). Mỗi
+          dòng một người.
         </p>
 
-        <label
-          >Tên thật của tất cả vận động viên:
-          <textarea
-            name="player_realnames"
-            placeholder="VD:
-Nguyễn Văn A
-Trần Thị B
-..."
-            required
-          ></textarea>
-        </label>
+        <label>Tên thật của tất cả VĐV</label>
+        <textarea name="Tên_thật_các_VĐV" rows="3" required></textarea>
+
+        <label>MSSV, lớp/khoa của từng VĐV</label>
+        <textarea name="MSSV_Lớp_Khoa" rows="3" required></textarea>
+
+        <label>Tên ingame (Riot ID#tag) của từng VĐV</label>
+        <textarea name="Riot_ID" rows="3" required></textarea>
+
+        <label>Số điện thoại của từng VĐV</label>
+        <textarea name="Số_điện_thoại_VĐV" rows="3" required></textarea>
+
+        <label>CCCD/CMND của từng VĐV</label>
+        <textarea name="CCCD_CMND" rows="3" required></textarea>
+
+        <label>Đội trưởng chịu trách nhiệm cung cấp thông tin</label>
+        <input type="text" name="Đội_trưởng_chịu_trách_nhiệm" required />
+
+        <h2>Thông tin game (khuyến khích điền)</h2>
 
         <label
-          >MSSV, lớp/khoa của từng vận động viên:
-          <textarea
-            name="player_student_info"
-            placeholder="VD:
-Nguyễn Văn A - 2051234 - Khoa CNTT - Lớp CLC K20
-Trần Thị B - 2054321 - Khoa Cơ khí - Lớp CK K20
-..."
-            required
-          ></textarea>
-        </label>
+          >Agent main (mỗi người tối đa 3) – ghi theo thứ tự thành viên ở
+          trên</label
+        >
+        <textarea name="Agent_main" rows="3"></textarea>
 
-        <label
-          >Tên ingame và tagname (Riot ID#tag) của từng vận động viên:
-          <textarea
-            name="player_riot_ids"
-            placeholder="VD:
-AceMan#1234
-NightWolf#5678
-..."
-            required
-          ></textarea>
-        </label>
+        <label>Khung giờ thi đấu thuận tiện của đội</label>
+        <input
+          type="text"
+          name="Khung_giờ_thi_đấu"
+          placeholder="VD: 19h - 22h"
+        />
 
-        <label
-          >Số điện thoại liên hệ của từng thành viên:
-          <textarea
-            name="player_phones"
-            placeholder="VD:
-Nguyễn Văn A - 09xxxxxxxx
-Trần Thị B - 03xxxxxxxx
-..."
-            required
-          ></textarea>
-        </label>
-
-        <label
-          >CCCD/CMND của từng thành viên:
-          <textarea
-            name="player_idcards"
-            placeholder="VD:
-Nguyễn Văn A - 079xxxxxxxx
-Trần Thị B - 079yyyyyyyy
-..."
-            required
-          ></textarea>
-        </label>
-
-        <label
-          >Đội trưởng chịu trách nhiệm chuẩn bị & cung cấp thông tin:
-          <input
-            type="text"
-            name="captain_responsible"
-            placeholder="Họ và tên đội trưởng"
-            required
-          />
-        </label>
-      </fieldset>
-
-      <!-- THÔNG TIN GAME (tùy chọn bổ sung) -->
-      <fieldset>
-        <legend>Thông tin game (khuyến khích điền)</legend>
-
-        <label
-          >Agent main (mỗi người tối đa 3) – ghi theo thứ tự thành viên ở trên:
-          <textarea
-            name="player_agents"
-            placeholder="VD:
-Jett, Skye
-Omen, Sova
-..."
-          ></textarea>
-        </label>
-
-        <label
-          >Khung giờ thi đấu thuận tiện của đội:
-          <input
-            type="text"
-            name="preferred_time"
-            placeholder="VD: Tối 19:00–22:00, T2–T6"
-          />
-        </label>
-      </fieldset>
-
-      <!-- CAM KẾT & ĐỒNG Ý -->
-      <fieldset>
-        <legend>Cam kết</legend>
+        <h2>Cam kết</h2>
         <label>
-          <input type="checkbox" name="commit_rules" required />
-          Chúng tôi cam kết: thông tin khai báo là chính xác; tuân thủ thể lệ,
-          không sử dụng phần mềm gian lận; chấp hành mọi hướng dẫn của BTC.
+          <input type="checkbox" name="Cam_kết" required />
+          Chúng tôi cam kết: thông tin khai báo là chính xác, tuân thủ thể lệ,
+          không sử dụng phần mềm gian lận và chấp hành hướng dẫn của BTC.
         </label>
-      </fieldset>
 
-      <button type="submit">Gửi đăng ký</button>
+        <button type="submit">Gửi đăng ký</button>
+        <p id="status" class="status"></p>
+      </form>
+    </div>
 
-      <!-- Thông báo nhỏ cho user -->
-      <p style="margin-top: 12px; font-size: 14px; opacity: 0.8">
-        Lưu ý: Nếu nút “Gửi đăng ký” báo lỗi, hãy kiểm tra lại các trường bắt
-        buộc (đánh dấu <strong>required</strong>).
-      </p>
-    </form>
-
-    <!-- JS -->
     <script src="js/script.js"></script>
   </body>
 </html>
