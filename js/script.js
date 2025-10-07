@@ -1,43 +1,46 @@
-document.getElementById("registration-form").addEventListener("submit", async function (e) {
-  e.preventDefault();
+document
+  .getElementById("registration-form")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const form = e.target;
+    const fd = new FormData(form);
+    const params = new URLSearchParams();
+    for (const [k, v] of fd.entries()) params.append(k, v);
 
-  const form = e.target;
-  const fd = new FormData(form);
+    const statusEl =
+      document.getElementById("status") ||
+      (() => {
+        const s = document.createElement("p");
+        s.id = "status";
+        s.style.marginTop = "10px";
+        s.style.color = "#00ff88";
+        form.appendChild(s);
+        return s;
+      })();
 
-  // Biến FormData -> URL-encoded (tránh preflight)
-  const params = new URLSearchParams();
-  for (const [k, v] of fd.entries()) params.append(k, v);
+    statusEl.textContent = "Đang gửi...";
 
-  // (tuỳ chọn) chỗ hiện trạng thái gửi
-  let statusEl = document.getElementById('status');
-  if (!statusEl) {
-    statusEl = document.createElement('p');
-    statusEl.id = 'status';
-    statusEl.style.marginTop = '10px';
-    statusEl.style.fontSize = '14px';
-    statusEl.style.opacity = '.9';
-    form.appendChild(statusEl);
-  }
-  statusEl.textContent = 'Đang gửi...';
+    try {
+      const res = await fetch("🔗DÁN_LINK_EXEC_Ở_ĐÂY", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+        body: params.toString(),
+      });
 
-  try {
-    const res = await fetch("PASTE_YOUR_WEB_APP_URL_HERE", { // 👈 dán URL /exec
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-      body: params.toString()
-    });
+      const json = await res.json().catch(() => ({}));
 
-    // Đọc JSON trả về từ Apps Script
-    const json = await res.json().catch(() => ({}));
-    if (res.ok && json.ok) {
-      statusEl.textContent = '✅ Đăng ký thành công! BTC đã nhận vào Google Sheets.';
-      form.reset();
-    } else {
-      statusEl.textContent = '❌ Gửi thất bại. Thử lại sau.';
-      console.error('Apps Script response:', json);
+      if (res.ok && json.ok) {
+        statusEl.textContent = "✅ Gửi thành công! BTC đã nhận thông tin.";
+        form.reset();
+      } else {
+        statusEl.textContent = "❌ Gửi thất bại, thử lại sau.";
+        console.error("Response lỗi:", json);
+      }
+    } catch (err) {
+      console.error("Fetch lỗi:", err);
+      statusEl.textContent =
+        "⚠️ Lỗi mạng (có thể do URL / quyền truy cập Apps Script).";
     }
-  } catch (err) {
-    console.error(err);
-    statusEl.textContent = '⚠️ Lỗi mạng. Kiểm tra lại kết nối hoặc URL /exec.';
-  }
-});
+  });
