@@ -24,7 +24,7 @@
           >Tên đội:
           <input
             type="text"
-            name="team_name"
+            name="tên_đội"
             autocomplete="organization"
             required
           />
@@ -32,14 +32,19 @@
 
         <label
           >Tên đội trưởng:
-          <input type="text" name="captain_name" autocomplete="name" required />
+          <input
+            type="text"
+            name="tên_đội_trưởng"
+            autocomplete="name"
+            required
+          />
         </label>
 
         <label
           >Số điện thoại đội trưởng:
           <input
             type="tel"
-            name="captain_phone"
+            name="sđt_đội_trưởng"
             inputmode="tel"
             autocomplete="tel"
             placeholder="0xxxxxxxxx"
@@ -51,7 +56,7 @@
           >Email đội trưởng:
           <input
             type="email"
-            name="captain_email"
+            name="email_đội_trưởng"
             autocomplete="email"
             placeholder="you@example.com"
             required
@@ -62,7 +67,7 @@
           >Discord đội trưởng:
           <input
             type="text"
-            name="captain_discord"
+            name="discord_đội_trưởng"
             placeholder="username#1234"
             required
           />
@@ -80,7 +85,7 @@
         <label
           >Tên thật của tất cả vận động viên:
           <textarea
-            name="player_realnames"
+            name="tên_thật_các_vận_động_viên"
             placeholder="VD:
 Nguyễn Văn A
 Trần Thị B
@@ -92,7 +97,7 @@ Trần Thị B
         <label
           >MSSV, lớp/khoa của từng vận động viên:
           <textarea
-            name="player_student_info"
+            name="thông_tin_học_vấn_các_vận_động_viên"
             placeholder="VD:
 Nguyễn Văn A - 2051234 - Khoa CNTT - Lớp CLC K20
 Trần Thị B - 2054321 - Khoa Cơ khí - Lớp CK K20
@@ -104,7 +109,7 @@ Trần Thị B - 2054321 - Khoa Cơ khí - Lớp CK K20
         <label
           >Tên ingame và tagname (Riot ID#tag) của từng vận động viên:
           <textarea
-            name="player_riot_ids"
+            name="tên_ingame_các_vận_động_viên"
             placeholder="VD:
 AceMan#1234
 NightWolf#5678
@@ -116,7 +121,7 @@ NightWolf#5678
         <label
           >Số điện thoại liên hệ của từng thành viên:
           <textarea
-            name="player_phones"
+            name="sđt các_vận_động_viên"
             placeholder="VD:
 Nguyễn Văn A - 09xxxxxxxx
 Trần Thị B - 03xxxxxxxx
@@ -128,7 +133,7 @@ Trần Thị B - 03xxxxxxxx
         <label
           >CCCD/CMND của từng thành viên:
           <textarea
-            name="player_idcards"
+            name="cccd_các_vận_động_viên"
             placeholder="VD:
 Nguyễn Văn A - 079xxxxxxxx
 Trần Thị B - 079yyyyyyyy
@@ -141,7 +146,7 @@ Trần Thị B - 079yyyyyyyy
           >Đội trưởng chịu trách nhiệm chuẩn bị & cung cấp thông tin:
           <input
             type="text"
-            name="captain_responsible"
+            name="Họ_và_tên_đội_trưởng"
             placeholder="Họ và tên đội trưởng"
             required
           />
@@ -155,7 +160,7 @@ Trần Thị B - 079yyyyyyyy
         <label
           >Agent main (mỗi người tối đa 3) – ghi theo thứ tự thành viên ở trên:
           <textarea
-            name="player_agents"
+            name="agent_main_các_vận_động_viên"
             placeholder="VD:
 Jett, Skye
 Omen, Sova
@@ -167,7 +172,7 @@ Omen, Sova
           >Khung giờ thi đấu thuận tiện của đội:
           <input
             type="text"
-            name="preferred_time"
+            name="khung_giờ_thi_đấu_thuận_tiện"
             placeholder="VD: Tối 19:00–22:00, T2–T6"
           />
         </label>
